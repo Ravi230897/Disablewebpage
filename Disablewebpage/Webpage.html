@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <h1 style="color:orange;">
+        Disabled Web Page
+    </h1>
+
+    <img src="/images/972b4a0a-613e-4187-bd8d-c57ef9f4392c.jpg" />
+
+    <p id="GFG_UP" style="font-size: 16px; font-weight: bold;">
+    </p>
+
+    <button onclick="gfg_Run()">
+        Disable
+    </button>
+
+    <p id="GFG_DOWN" style="color:orange; font-size: 20px; font-weight: bold;">
+    </p>
+
+    <script>
+    var el_up = document.getElementById("GFG_UP");
+    var el_down = document.getElementById("GFG_DOWN");
+    el_up.innerHTML =
+        "Click on the button to disable right click on image";
+
+    function gfg_Run() {
+        document.addEventListener("contextmenu",
+
+        function(e) {
+            if (e.target.nodeName === "IMG") {
+                e.preventDefault();
+            }
+        }, false);
+
+        el_down.innerHTML = "Right click disabled on image";
+    }
+    </script>
+</body>
+</html>
